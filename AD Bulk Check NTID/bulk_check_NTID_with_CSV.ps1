@@ -36,7 +36,7 @@ try{
     break
 }
 #downloads folder
-$downloadsfolder = "C:\Users\<user>\downloads" #common path for web downloads but you can change it to wherever
+$downloadsfolder = "C:\Users\1022801\downloads" #common path for web downloads but you can change it to wherever
 #set csv log path
 $processeditemspath = $downloadsfolder+"\ProcessedItems.csv"
 #create working folders
