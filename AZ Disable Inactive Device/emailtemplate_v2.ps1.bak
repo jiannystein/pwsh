@@ -13,14 +13,13 @@
 
 #region Init
 #Import Data from Csv File where Device Disabled equal Success
-$UsersList = Import-Csv 'C:\DeleteResult.csv' | Where-Object { $_.'Device Disabled' -eq 'Success' }
+$UsersList = Import-Csv 'C:\Temp\Result_20220610183155.csv' | Where-Object { $_.'Device Disabled' -eq 'Success' }
 
 #Transcript
 Start-Transcript -Path 'C:\temp\emailrunlogs.txt' -Append
 
 # Progress Count
 $Count = 0
-$total=$UsersList.Items.count;
 #endregion Init
 
 #region Work
@@ -36,7 +35,7 @@ foreach ($User in $UsersList) {
 
     try {
         $MailParam = @{
-            From       = 'donotreply@linar.com'
+            From       = '<From Who?>'
             To         = $EmailAddress
             SMTPServer = 'corimc04.corp.Jabil.org'
             Subject    = '[Notice] Your device has been disabled due to inactivity'
